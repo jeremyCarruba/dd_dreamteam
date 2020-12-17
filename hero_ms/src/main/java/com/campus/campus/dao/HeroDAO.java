@@ -8,7 +8,7 @@ import com.campus.campus.model.Hero;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-
+@Repository
 public interface HeroDAO extends JpaRepository<Hero, Integer> {
     public List<Hero> findAll();
     public Optional<Hero> findById(int id);

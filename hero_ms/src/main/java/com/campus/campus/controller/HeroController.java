@@ -3,6 +3,8 @@ package com.campus.campus.controller;
 
 import com.campus.campus.dao.HeroDAO;
 import com.campus.campus.model.Hero;
+import com.campus.campus.model.NewHero;
+import com.campus.campus.services.HeroService;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,10 +16,13 @@ import java.util.Optional;
 
 @Api( description="API pour es opérations CRUD sur les personnages.")
 @RestController
-public class CharacterController {
+public class HeroController {
 
     @Autowired
     private HeroDAO heroDAO;
+
+    @Autowired
+    private HeroService heroService;
 
     @ApiOperation(value = "Récupère tous les personnages")
     @RequestMapping(value="/characters", method= RequestMethod.GET)
@@ -54,8 +59,9 @@ public class CharacterController {
 //
     @ApiOperation(value = "Ajout d'un perso")
     @PostMapping(value = "/characters")
-    public ResponseEntity<Hero> addCharacter(@RequestBody Hero hero) {
-        return new ResponseEntity<>(heroDAO.save(hero), HttpStatus.CREATED);
+    public ResponseEntity<Hero> addCharacter(@RequestBody NewHero newHero) {
+        Hero hero = heroService.createNewHero(newHero);
+        return new ResponseEntity<>(hero, HttpStatus.CREATED);
     }
 //
     /**

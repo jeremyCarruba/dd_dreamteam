@@ -1,34 +1,48 @@
 package com.campus.campus.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table
 public class Hero {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String type;
 
-    public Hero() {
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Type type;
+
+    private int health;
+    private int strength;
+    private String weapon;
+
+    public Hero(){};
+
+    public Hero(String name, Type type) {
+        this.name = name;
+        this.type = type;
+        this.health = type.getHealth();
+        this.strength = type.getStrength();
+        this.weapon = null;
     }
 
-
-    public Hero(int id, String name, String type) {
+    public Hero(Integer id, String name, Type type, int health, int strength, String weapon) {
         this.id = id;
         this.name = name;
         this.type = type;
+        this.health = health;
+        this.strength = strength;
+        this.weapon = weapon;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -40,12 +54,36 @@ public class Hero {
         this.name = name;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public String getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(String weapon) {
+        this.weapon = weapon;
     }
 
     @Override
@@ -54,6 +92,9 @@ public class Hero {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
+                ", health=" + health +
+                ", strength=" + strength +
+                ", weapon='" + weapon + '\'' +
                 '}';
     }
 }
