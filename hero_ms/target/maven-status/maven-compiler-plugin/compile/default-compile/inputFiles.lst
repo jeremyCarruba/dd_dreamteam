@@ -1,6 +1,8 @@
-/Users/michelmoustache/Documents/Dev/Projets/campus/src/main/java/com/campus/campus/controller/CharacterController.java
-/Users/michelmoustache/Documents/Dev/Projets/campus/src/main/java/com/campus/campus/model/Character.java
-/Users/michelmoustache/Documents/Dev/Projets/campus/src/main/java/com/campus/campus/configuration/SwaggerConfig.java
-/Users/michelmoustache/Documents/Dev/Projets/campus/src/main/java/com/campus/campus/CampusApplication.java
-/Users/michelmoustache/Documents/Dev/Projets/campus/src/main/java/com/campus/campus/dao/CharacterDAOImpl.java
-/Users/michelmoustache/Documents/Dev/Projets/campus/src/main/java/com/campus/campus/dao/CharacterDAO.java
+/Users/michelmoustache/Documents/Dev/Projets/dd_dreamteam/hero_ms/src/main/java/com/campus/campus/dao/TypeDAO.java
+/Users/michelmoustache/Documents/Dev/Projets/dd_dreamteam/hero_ms/src/main/java/com/campus/campus/services/HeroService.java
+/Users/michelmoustache/Documents/Dev/Projets/dd_dreamteam/hero_ms/src/main/java/com/campus/campus/dao/HeroDAO.java
+/Users/michelmoustache/Documents/Dev/Projets/dd_dreamteam/hero_ms/src/main/java/com/campus/campus/CampusApplication.java
+/Users/michelmoustache/Documents/Dev/Projets/dd_dreamteam/hero_ms/src/main/java/com/campus/campus/model/Hero.java
+/Users/michelmoustache/Documents/Dev/Projets/dd_dreamteam/hero_ms/src/main/java/com/campus/campus/model/Type.java
+/Users/michelmoustache/Documents/Dev/Projets/dd_dreamteam/hero_ms/src/main/java/com/campus/campus/controller/HeroController.java
+/Users/michelmoustache/Documents/Dev/Projets/dd_dreamteam/hero_ms/src/main/java/com/campus/campus/model/NewHero.java

@@ -1,0 +1,8 @@
+com/campus/campus/dao/HeroDAO.class
+com/campus/campus/model/Type.class
+com/campus/campus/services/HeroService.class
+com/campus/campus/dao/TypeDAO.class
+com/campus/campus/controller/HeroController.class
+com/campus/campus/model/Hero.class
+com/campus/campus/model/NewHero.class
+com/campus/campus/CampusApplication.class
