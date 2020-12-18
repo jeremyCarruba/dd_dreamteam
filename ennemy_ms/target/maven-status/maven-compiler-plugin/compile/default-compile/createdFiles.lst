@@ -1,0 +1,5 @@
+com\dd_dreamteam\ennemy_ms\model\Ennemy.class
+com\dd_dreamteam\ennemy_ms\controller\EnnemyController.class
+com\dd_dreamteam\ennemy_ms\dao\EnnemyDAO.class
+com\dd_dreamteam\ennemy_ms\EnnemyMsApplication.class
+com\dd_dreamteam\ennemy_ms\service\EnnemyService.class
