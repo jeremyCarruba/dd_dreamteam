@@ -1,6 +1,8 @@
 package com.board_ms.board_ms.services;
 
 import com.board_ms.board_ms.model.Board;
+import com.board_ms.board_ms.model.Item;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,6 +12,9 @@ import java.util.TreeMap;
 
 @Service
 public class BoardService {
+
+    @Autowired
+    MainService mainService;
 
     public TreeMap<Integer, String> createNewBoard(int boardSize){
         TreeMap<Integer, String> board = new TreeMap<>();
@@ -22,16 +27,17 @@ public class BoardService {
      */
     protected void setRandomBoardEvents(int boardSize, TreeMap<Integer, String> boardEvents) {
         List<Integer> randomBoard = createRandomArray(boardSize);
+        Item[] items = mainService.itemsList();
         emptySquares(boardSize, boardEvents);
         createEvents("Goblin", 10, pickArray(randomBoard, 10), boardEvents);
         createEvents("Dragon", 4, pickArray(randomBoard,4), boardEvents);
         createEvents("Sorcerer", 10, pickArray(randomBoard,10),  boardEvents);
-        createEvents("Massue", 5, pickArray(randomBoard,5),boardEvents);
-        createEvents("Épée", 4, pickArray(randomBoard,4),boardEvents);
-        createEvents("Éclair", 5, pickArray(randomBoard,5),boardEvents);
-        createEvents("Boule de feu", 2, pickArray(randomBoard,2),boardEvents);
-        createEvents("Potion Standard", 5, pickArray(randomBoard,5),boardEvents);
-        createEvents("Grande Potion", 2, pickArray(randomBoard,2),boardEvents);
+        createEvents(items[0].getName(), 5, pickArray(randomBoard,5),boardEvents);
+        createEvents(items[1].getName(), 4, pickArray(randomBoard,4),boardEvents);
+        createEvents(items[2].getName(), 5, pickArray(randomBoard,5),boardEvents);
+        createEvents(items[3].getName(), 2, pickArray(randomBoard,2),boardEvents);
+        createEvents(items[4].getName(), 5, pickArray(randomBoard,5),boardEvents);
+        createEvents(items[5].getName(), 2, pickArray(randomBoard,2),boardEvents);
     }
 
     /**
