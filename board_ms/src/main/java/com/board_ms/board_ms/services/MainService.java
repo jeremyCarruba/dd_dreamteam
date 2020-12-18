@@ -1,6 +1,7 @@
 package com.board_ms.board_ms.services;
 
 import com.board_ms.board_ms.model.Board;
+import com.board_ms.board_ms.model.Ennemy;
 import com.board_ms.board_ms.model.Item;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,15 @@ public class MainService {
     public Item[] itemsList(){
         ResponseEntity<Item[]> response = restTemplate.getForEntity(baseUrl, Item[].class);
         Item[] list = null;
+        if(response.getStatusCode() == HttpStatus.OK){
+            list = response.getBody();
+        }
+        return list;
+    }
+
+    public Ennemy[] ennemiesList(){
+        ResponseEntity<Ennemy[]> response = restTemplate.getForEntity("http://localhost:8084/ennemies", Ennemy[].class);
+        Ennemy[] list = null;
         if(response.getStatusCode() == HttpStatus.OK){
             list = response.getBody();
         }

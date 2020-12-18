@@ -9,11 +9,7 @@ public class Ennemy {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
-
-    @OneToOne
-    @JoinColumn(unique = true)
     private String type;
-
     private int health;
     private int strength;
     private int number;

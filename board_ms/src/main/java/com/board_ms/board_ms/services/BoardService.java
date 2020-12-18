@@ -1,6 +1,7 @@
 package com.board_ms.board_ms.services;
 
 import com.board_ms.board_ms.model.Board;
+import com.board_ms.board_ms.model.Ennemy;
 import com.board_ms.board_ms.model.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,10 +29,11 @@ public class BoardService {
     protected void setRandomBoardEvents(int boardSize, TreeMap<Integer, String> boardEvents) {
         List<Integer> randomBoard = createRandomArray(boardSize);
         Item[] items = mainService.itemsList();
+        Ennemy[] ennemies = mainService.ennemiesList();
         emptySquares(boardSize, boardEvents);
-        createEvents("Goblin", 10, pickArray(randomBoard, 10), boardEvents);
-        createEvents("Dragon", 4, pickArray(randomBoard,4), boardEvents);
-        createEvents("Sorcerer", 10, pickArray(randomBoard,10),  boardEvents);
+        createEvents(ennemies[0].getType(), ennemies[0].getNumber(), pickArray(randomBoard, ennemies[0].getNumber()), boardEvents);
+        createEvents(ennemies[1].getType(), ennemies[1].getNumber(), pickArray(randomBoard,ennemies[1].getNumber()), boardEvents);
+        createEvents(ennemies[2].getType(), ennemies[2].getNumber(), pickArray(randomBoard,ennemies[2].getNumber()),  boardEvents);
         createEvents(items[0].getName(), 5, pickArray(randomBoard,5),boardEvents);
         createEvents(items[1].getName(), 4, pickArray(randomBoard,4),boardEvents);
         createEvents(items[2].getName(), 5, pickArray(randomBoard,5),boardEvents);
